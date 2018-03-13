@@ -1,0 +1,36 @@
+TECHNOLOGOIES
+------------------------------------------------------------------------------
+I have developed the applicaion using followings as core component 
+	.NET Core -- to alow the mximum portability
+	WebApi -- to allow RESTful API to make the application available for use in any platform such as web, mobile app without requiring any changes.
+	Token based authenticaiton -- best approah for Restful API authentication
+	Dapper 
+	Structuremap -- Dependency injection
+	
+
+SETUP
+----------------------------------------------------------------------------
+Open in Visual Studio 2017
+Find the dtabase mdf and ldf file in Database folder and change ConnectionStirng accordingly in appsettings.json
+I have attached Postman collecttion to make testing easy.
+Use postman to 
+	RegisterRefree, 
+	RegisterMember, 
+	UserLogin, 
+	CreateCompetitor, 
+	CreateContest, 
+	SaveMatchResult, 
+	GetPublicLeaderboard, 
+	MakeLeaderboardPublic, 
+	GetAllLeaderboard
+
+
+ASSUMPTIONS
+----------------------------------------------------------------------
+Each contest should have tournament so the leaderboard can be requested per Tournament.
+Same competitor may participant in different tournament.
+No tournament details are stored at thsi stage, only tournament id is used for the time being
+Leaderboard is being at lowest level so that the leaderboard data can be broken down and bound according to the request
+Instead of storing point, I have stored the match result agains each competitor per contest so that the point can be made configurable
+
+ 

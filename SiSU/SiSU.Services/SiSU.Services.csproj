@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SiSU.Infrastructure\SiSU.Infrastructure.csproj" />
+    <ProjectReference Include="..\SiSU.Model\SiSU.Model.csproj" />
+    <ProjectReference Include="..\SiSU.Repository\SiSU.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

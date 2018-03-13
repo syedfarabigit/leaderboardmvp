@@ -1,0 +1,205 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SiSU",
+		"_postman_id": "d928d3f0-9d78-9042-2c8f-8b4d2ce665b5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RegisterReferee",
+			"request": {
+				"url": "localhost:9191/api/account/register-referee",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Email\": \"refree@test.com\",\r\n\t\"Password\": \"MyPassword\",\r\n\t\"ConfirmPassword\": \"MyPassword\"\r\n}"
+				},
+				"description": "Register User"
+			},
+			"response": []
+		},
+		{
+			"name": "UserLogin",
+			"request": {
+				"url": "localhost:9191/api/account/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Conte",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Email\": \"refree@test.com\",\r\n\t\"Password\": \"MyPassword\"\r\n}"
+				},
+				"description": "Login as Refree"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateContest ",
+			"request": {
+				"url": "localhost:9191/api/contest/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlJlZnJlZSIsImV4cCI6MTUyMDkzOTQ5MywiaXNzIjoibG9jYWxob3N0OjkxOTEiLCJhdWQiOiJsb2NhbGhvc3Q6OTE5MSJ9.Cw66OELICJsnkOxXBQmhkWZbhLn-sv9caS10EL0FLwM",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Name\":\"Contest Four\",\n\t\"TournamentId\":100,\n\t\"CompetitorIds\":[3,2]\n}"
+				},
+				"description": "Use this endpoint to create Contest by providing\n\nContestName (string)\nTournamentId (integer)\nCompetitorIds (List of Integer)"
+			},
+			"response": []
+		},
+		{
+			"name": "CreateCompetitor ",
+			"request": {
+				"url": "localhost:9191/api/competitor/create",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Competitor One\"\n}"
+				},
+				"description": "Use this end point to create Competitor by providing\n\nName (string)"
+			},
+			"response": []
+		},
+		{
+			"name": "SaveMatchResult",
+			"request": {
+				"url": "localhost:9191/api/contest/save-result",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiMiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlJlZnJlZSIsImV4cCI6MTUyMDkzOTQ5MywiaXNzIjoibG9jYWxob3N0OjkxOTEiLCJhdWQiOiJsb2NhbGhvc3Q6OTE5MSJ9.Cw66OELICJsnkOxXBQmhkWZbhLn-sv9caS10EL0FLwM",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ContestId\":3,\n\t\"IsDrawn\":false,\n\t\"WinnerId\":2\n}"
+				},
+				"description": "Store/Save the contest/game result\nEndpoint for Refree where refree can decide and save the result"
+			},
+			"response": []
+		},
+		{
+			"name": "GetPublicLeaderboard",
+			"request": {
+				"url": "localhost:9191/api/leaderboard/get/22",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "Get Public Leaderboard only"
+			},
+			"response": []
+		},
+		{
+			"name": "MakeLeaderboardPublic",
+			"request": {
+				"url": "localhost:9191/api/leaderboard/make-public",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"ContestId\":1}"
+				},
+				"description": "Endpoint to make leaderboard public for a particular contest by providing ContestId"
+			},
+			"response": []
+		},
+		{
+			"name": "GetAllLeaderboard",
+			"request": {
+				"url": "localhost:9191/api/leaderboard/get-all/100",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3VzZXJkYXRhIjoiMyIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6Ik1lbWJlciIsImV4cCI6MTUyMDkzOTgyNCwiaXNzIjoibG9jYWxob3N0OjkxOTEiLCJhdWQiOiJsb2NhbGhvc3Q6OTE5MSJ9.wbyABrudlFsp2p_hgchMVDImjnn1f0wpnV5I0X3bAZA",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": "For authenticated user leaderboard should include private ones as well"
+			},
+			"response": []
+		},
+		{
+			"name": "RegisterMember",
+			"request": {
+				"url": "localhost:9191/api/account/register-member",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"Email\": \"member@test.com\",\r\n\t\"Password\": \"MyPassword\",\r\n\t\"ConfirmPassword\": \"MyPassword\"\r\n}"
+				},
+				"description": "Register Member"
+			},
+			"response": []
+		}
+	]
+}
